@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard COnferencias</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div>
+            <section>
+                <div>
+                    <span id="bienvenido-user"></span>
+                    <button onclick="logout()" class="btn-logout">Cerrar Sesion</button>
+                </div>
+                <nav>
+                    <button onclick="seccion('conferencistas')">Conferencistas</button>
+                    <button onclick="seccion('auditorios')">Auditorios</button>
+                    <button onclick="seccion('reservas')">Reservas</button>
+                </nav>
+            </section>
+        </div>
+    </header>
+    
+    <div>
+        <main>
+            <!--CONFERENCISTAS-->
+            <section id="sec-conferencistas" class="modulo" style="display: none;">
+                <h1>Seccion Conferencistas</h1>
+                <form id="form-conferencistas">
+                    <input type="hidden" id="co._id">
+                    <input type="text" id="co-nombre" placeholder="Nombre:" required>
+
+                    <button class="btn-save">Ingresar Infomacion</button>
+                </form>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Cedula</th>
+                            <th>Genero</th>
+                            <th>Ciudad</th>
+                            <th>Direccion</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Telefono</th>
+                            <th>Email</th>
+                            <th>Empresa</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-conferencistas"></tbody>
+                </table>
+            </section>
+
+
+            <!--AUDITORIOS-->
+            <section id="sec-auditorios" class="modulo" style="display: none;">
+                <h1>Seccion Auditorios</h1>
+                <form id="form-auditorios">
+                    <input type="hidden" id="au._id">
+                    <input type="text" id="au-nombre" placeholder="Nombre:" required>
+
+                    <button class="btn-save">Ingresar Infomacion</button>
+                </form>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Ubicacion</th>
+                            <th>Capacidad</th>
+                            <th>Descripcion</th>
+                            <th>Acciones</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-auditorios"></tbody>
+                </table>
+            </section>
+
+
+            <!--RESERVAS-->
+            <section id="sec-reservas" class="modulo" style="display: none;">
+                <h1>Seccion Reservas</h1>
+                <form id="form-reservas">
+                    <input type="hidden" id="re._id">
+                    <input type="text" id="re-nombre" placeholder="Nombre:" required>
+
+                    <button class="btn-save">Ingresar Infomacion</button>
+                </form>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Descripcion</th>
+                            <th>Conferencista</th>
+                            <th>Auditorios</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-reservas"></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+<script src="dashboard.js"></script>
+</html>
