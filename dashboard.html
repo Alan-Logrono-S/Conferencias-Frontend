@@ -26,11 +26,23 @@
     <div>
         <main>
             <!--CONFERENCISTAS-->
-            <section id="sec-conferencistas" class="modulo" style="display: none;">
+            <section id="sec-conferencistas" class="modulo">
                 <h1>Seccion Conferencistas</h1>
                 <form id="form-conferencistas">
                     <input type="hidden" id="co._id">
                     <input type="text" id="co-nombre" placeholder="Nombre:" required>
+                    <input type="text" id="co-apellido" placeholder="Apellido:" required>
+                    <input type="text" id="co-cedula" placeholder="Cedula:" required>
+                    <input type="text" id="co-genero" placeholder="Genero:" required>
+                    <input type="text" id="co-ciudad" placeholder="Ciudad:" required>
+                    <input type="text" id="co-direccion" placeholder="Direccion:" required>
+                    <div>
+                        <label>Fecha de Nacimiento</label>
+                        <input type="date" id="co-fecha" required>
+                    </div>
+                    <input type="text" id="co-telefono" placeholder="Telefono:" required>
+                    <input type="email" id="co-email" placeholder="Email:" required>
+                    <input type="text" id="co-empresa" placeholder="Empresa:" required>
 
                     <button class="btn-save">Ingresar Infomacion</button>
                 </form>
@@ -60,7 +72,11 @@
                 <h1>Seccion Auditorios</h1>
                 <form id="form-auditorios">
                     <input type="hidden" id="au._id">
+                    <input type="text" id="au-codigo" placeholder="Codigo:" required>
                     <input type="text" id="au-nombre" placeholder="Nombre:" required>
+                    <input type="text" id="au-ubicacion" placeholder="Ubicacion:" required>
+                    <input type="text" id="au-capacidad" placeholder="Capacidad:" required>
+                    <textarea id="au-descripcion" required placeholder="Descripcion"></textarea>
 
                     <button class="btn-save">Ingresar Infomacion</button>
                 </form>
@@ -86,7 +102,11 @@
                 <h1>Seccion Reservas</h1>
                 <form id="form-reservas">
                     <input type="hidden" id="re._id">
-                    <input type="text" id="re-nombre" placeholder="Nombre:" required>
+                    <input type="text" id="re-codigo" placeholder="Codigo:" required>
+                    <input type="text" id="re-descripcion" placeholder="Descripcion:" required>
+                
+                    <select id="re-conferencista" required><option value="">Seleccionar Conferencista</option></select>
+                    <select id="re-auditorio" required><option value="">Seleccionar Auditorio</option></select>
 
                     <button class="btn-save">Ingresar Infomacion</button>
                 </form>

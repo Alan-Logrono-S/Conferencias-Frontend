@@ -25,12 +25,12 @@ document.querySelector('#form-login').addEventListener('submit', async(e)=>{
     }catch(error){
         errorDiv.textContent = error.message;
 
-        errorDiv.classList.remove(errorHiden);
-        errorDiv.classList.add(errorShow);
+        errorDiv.classList.remove('errorHiden');
+        errorDiv.classList.add('errorShow');
 
         setTimeout(() => {
-            errorDiv.classList.add(errorHiden);
-            errorDiv.classList.remove(errorShow);
+            errorDiv.classList.add('errorHiden');
+            errorDiv.classList.remove('errorShow');
         }, 3000);
     }
 });

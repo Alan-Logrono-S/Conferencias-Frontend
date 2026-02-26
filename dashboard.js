@@ -44,7 +44,7 @@ async function listarConferencistas() {
     ).join('');
 
     document.getElementById('re-conferencista').innerHTML = '<option value="">Seleccionar Conferencista</option>' +
-    globalConferencistas.map(c => <option value='${c._id}'>${c.nombre} ${c.apellido}</option>).join('');
+    globalConferencistas.map(c =>` <option value='${c._id}'>${c.nombre} ${c.apellido}</option>`).join('');
 };
 
 document.getElementById('form-conferencistas').addEventListener('submit', async (e)=>{
@@ -118,7 +118,7 @@ async function listarAuditorios() {
     ).join('');
 
     document.getElementById('re-auditorio').innerHTML = '<option value="">Seleccionar Auditorio</option>' +
-    globalAuditorios.map(a => <option value='${a._id}'>${a.nombre}</option>).join('');
+    globalAuditorios.map(a =>` <option value='${a._id}'>${a.nombre}</option>`).join('');
 };
 
 document.getElementById('form-auditorios').addEventListener('submit', async (e)=>{
@@ -177,8 +177,8 @@ async function listarReservas() {
         <tr>
             <td>${re.codigo}</td>
             <td>${re.descripcion}</td>
-            ${co ? co.nombre + ' '+ co.apellido : 'No encontrado'}
-            ${au ? au.nombre : 'No encontrado'}
+            <td>${co ? co.nombre + ' '+ co.apellido : 'No encontrado'}</td>
+            <td>${au ? au.nombre : 'No encontrado'}</td>
 
             <td>
                 <button class="btn-edit" onClick="agregarReserva('${re._id}')">Editar</button>
@@ -220,7 +220,7 @@ function agregarReserva(id){
     if(!r) return
     document.getElementById('re._id').value = r._id;
     document.getElementById('re-codigo').value = r.codigo;
-    document.getElementById('re-descripcon').value = r.descripcion;
+    document.getElementById('re-descripcion').value = r.descripcion;
     document.getElementById('re-conferencista').value = r.id_conferencista;
     document.getElementById('re-auditorio').value = r.id_auditorio;
 
